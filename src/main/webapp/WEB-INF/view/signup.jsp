@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,9 +8,14 @@
 <title>Регистрация нового юзвера</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/style.css">
+<style>
+.error {
+	color: red
+}
+</style>
 </head>
 <body>
-		<form:form id="login" action="processNewUser" modelAttribute="user">
+	<form:form id="login" action="processUser" modelAttribute="user">
 
 		<h1 id="ff-proof" class="ribbon">Форма регистрации &nbsp;&nbsp;</h1>
 
@@ -25,21 +30,22 @@
 		</div>
 
 		<fieldset id="inputs">
-			<form:input id="reg-field" placeholder="username" path="username"/>
-			<form:password id="reg-field" placeholder="password" path="password"/>
-			<form:input id="reg-field" placeholder="age" path="age"/>
+			<form:errors path="username" cssClass="error" /><form:input id="reg-field" placeholder="username" path="username" />
+			<form:errors path="password" cssClass="error" /><form:password id="reg-field" placeholder="password" path="password" />
+			<form:errors path="age" cssClass="error" /><form:input id="reg-field" placeholder="age" path="age" />
 			<div id="reg-field">
-			Sex:      
-			Man<form:radiobutton path="sex" value="true"/>
-			Woman<form:radiobutton path="sex"  value="false"/>
+				Sex: Man
+				<form:radiobutton path="sex" value="true" />
+				Woman
+				<form:radiobutton path="sex" value="false" />
 			</div>
-			
-			
-			
+
+
+
 		</fieldset>
 
 		<fieldset id="actions">
-			<input type="submit" id="submit" value="Подтвердить" />			
+			<input type="submit" id="submit" value="Подтвердить" />
 		</fieldset>
 
 	</form:form>

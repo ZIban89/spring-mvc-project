@@ -1,11 +1,14 @@
 package by.htp.nikonov.task02.command;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import by.htp.nikonov.task02.Entity.User;
+import by.htp.nikonov.task02.entity.User;
 
 
 @Controller
@@ -19,19 +22,17 @@ public class PageController {
 	}
 	
 	@RequestMapping("/processUser")
-	public String showUserInfo(@ModelAttribute("user") User user) {
+	public String showUserInfo(@Valid @ModelAttribute("user") User user, BindingResult theBindingResult) {
 		
+		System.out.println((user.getUsername()==null)+ " " + (user.getPassword()==null));
 		
-		return "process-user";
+		if(theBindingResult.hasErrors())
+			return "signup";
+		else
+			return "process-user";
 	}
 	
-	@RequestMapping("/processNewUser")
-	public String showNewUserInfo(@ModelAttribute("user") User user) {
 		
-		
-		return "process-user";
-	}
-	
 	
 	@RequestMapping("/start")
 	public String showStartPage(Model model) {
