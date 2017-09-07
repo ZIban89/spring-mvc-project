@@ -10,7 +10,7 @@ public class IndexPageCommand {
 	@RequestMapping("/")
 	public String showForm(Model theModel) {
 		
-		return "redirect:start";
+		return "redirect:modify";
 	}
 
 }

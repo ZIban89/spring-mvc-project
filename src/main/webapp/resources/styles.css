@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.c {
+	border: 1px solid #333;
+	display: inline-block;
+	padding: 5px 15px;
+	text-decoration: none;
+	color: navy;
+}
+
+.c:hover {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+	color: #a00;
+}
+
+header {
+	
+	top: 0px;
+	
+}
+footer{
+
+	bottom: 0px;
+	
+}
+
+header, footer{
+position: fixed;
+	left: 0px;
+	height: 60px;
+	width: 100%;
+	background: silver;	
+}
+
+form {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.error {
+	color: red
+}
+

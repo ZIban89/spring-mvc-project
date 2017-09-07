@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
@@ -14,12 +13,13 @@
 	<context:component-scan base-package="by.htp.nikonov.task02" />
 
 	<mvc:annotation-driven />
-	
+
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+	
 	<bean class="org.springframework.context.support.ResourceBundleMessageSource"
 		id="messageSource">
 
-		<property value="resources/messages" name="basenames" />
+		<property value="mess" name="basenames" />
 
 	</bean>
 
@@ -31,6 +31,7 @@
 
 	
 
-	
+
+
 
 </beans>
