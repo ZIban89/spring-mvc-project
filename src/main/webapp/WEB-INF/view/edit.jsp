@@ -71,6 +71,7 @@
 	
 	<footer><h2>It's footer</h2></footer>
 
+
 	<script>
 		if(${user.country!=null}){			
 			var select=document.querySelector('select');
@@ -79,7 +80,7 @@
 					select.options[i].selected=true;
 				}	
 			}
-		}		
+		}			
 	</script>
 </body>
 </html>

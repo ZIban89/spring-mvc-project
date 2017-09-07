@@ -7,7 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/styles.css">
 
 
 </head>
@@ -47,14 +48,14 @@
 			</c:forEach>
 		</table>
 		<input type="submit" id="delBtn" value="Delete" disabled="disabled"
-			onClick="return delFunction()" /> 
-		<input type="button" value="New"
+			onClick="return delFunction()" /> <input type="button" value="New"
 			onClick='location.href="${pageContext.request.contextPath}/edit-user--1"' />
 	</form>
-
-
-
-<footer><h2>It's footer</h2></footer>
+	
+	<footer>
+	<h2>It's footer</h2>
+	</footer>
+	
 	<script
 		src="${pageContext.request.contextPath}/resources/del-btn-script.js"></script>
 	<script
