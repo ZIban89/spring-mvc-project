@@ -7,14 +7,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/styles.css">
 </head>
 <body>
-<header><h1>It's header</h1></header>
+	<header>
+		<h1>It's header</h1>
+	</header>
 
-	
-		<form:form action="save" modelAttribute="user">
-		<table >
+
+	<form:form action="save" modelAttribute="user">
+		<table>
 			<tr>
 				<form:input path="id" value="${user.id }" hidden="true" />
 			</tr>
@@ -40,8 +43,8 @@
 			</tr>
 			<tr>
 				<td>Age</td>
-				<td><form:input path="age" value="${user.age }" />
-					<form:errors path="age" cssClass="error" /></td>
+				<td><form:input path="age" value="${user.age }" /> <form:errors
+						path="age" cssClass="error" /></td>
 
 			</tr>
 			<tr>
@@ -63,13 +66,15 @@
 			<tr>
 				<td><input type="submit" value="Save" /></td>
 				<td><input type="button" value="Cancel"
-					onClick='location.href="${pageContext.request.contextPath}/modify"'></td>
+					onClick='location.href="${pageContext.request.contextPath}/main-page"'></td>
 			</tr>
-			</table>
-		</form:form>
-	
-	
-	<footer><h2>It's footer</h2></footer>
+		</table>
+	</form:form>
+
+
+	<footer>
+		<h2>It's footer</h2>
+	</footer>
 
 
 	<script>

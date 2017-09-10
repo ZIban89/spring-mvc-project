@@ -23,6 +23,8 @@ public class UserDAOImpl implements UserDAO {
 			session.beginTransaction();
 			user = session.get(User.class, id);
 			session.getTransaction().commit();
+		}catch(Throwable e) {
+			System.out.println("Exception");
 		}
 		return user;
 	}

@@ -29,24 +29,22 @@ public class PageController {
 	@Autowired
 	CountryService countryService;
 
-	@RequestMapping("/modify")
+	@RequestMapping("/main-page")
 	public String modifyUser(Model model) {
 
 		List<User> users = userService.getAll();
 		model.addAttribute("users", users);
-		return "modify";
+		return "main-page";
 	}
 
 	@RequestMapping("/edit-user-{id}")
 	public String editPage(@PathVariable Integer id, Model model) {
 		
 		UserForm userForm = null;
-		Country country = null;
 		if (id < 0) {
 			userForm = new UserForm();
 		} else {
-			userForm = new UserForm(userService.getByID(id));
-			
+			userForm = new UserForm(userService.getByID(id));			
 		}
 		List<Country> countries = countryService.findAll();
 		model.addAttribute("user", userForm);
@@ -58,17 +56,15 @@ public class PageController {
 	@RequestMapping("/save")
 	public String saveUser(@Valid @ModelAttribute("user") UserForm userForm, 
 			BindingResult theBindingResult, Model model) {
-		
-		
+				
 		if(theBindingResult.hasErrors()) {
 			List<Country> countries = countryService.findAll();
 			model.addAttribute("countries", countries);
 			return "edit";
-		}
-		
-		userService.save(getUserByForm(userForm));		
+		}		
+		userService.save(getUserByForm(userForm));	
 
-		return "redirect:modify";
+		return "redirect:main-page";
 	}
 
 	@RequestMapping("/delete")
@@ -76,7 +72,7 @@ public class PageController {
 		for (Integer e : o) {
 			userService.deleteUser(e);
 		}
-		return "redirect:modify";
+		return "redirect:main-page";
 
 	}
 	
